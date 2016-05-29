@@ -3,15 +3,15 @@
 # use the powerline patched font variant of the theme, possible values are:
 #   - default
 #   - powerline
-tmux_conf_theme=default
-#tmux_conf_theme=powerline
+#tmux_conf_theme=default
+tmux_conf_theme=powerline
 
 # display an indicator in the status line when the prefix key has been pressed,
 # possible values are:
 #   - enabled
 #   - disabled
-tmux_conf_theme_prefix=disabled
-#tmux_conf_theme_prefix=enabled
+#tmux_conf_theme_prefix=disabled
+tmux_conf_theme_prefix=enabled
 
 # display the battery information in the status line, possible values are:
 #   - enabled
@@ -67,17 +67,17 @@ tmux_conf_theme_date=enabled
 #   - enabled
 #   - disabled
 #   - ssh
-tmux_conf_theme_username=enabled
+#tmux_conf_theme_username=enabled
 #tmux_conf_theme_username=disabled
-#tmux_conf_theme_username=ssh
+tmux_conf_theme_username=ssh
 
 # display the hostname in the status line, possible values are:
 #   - enabled
 #   - disabled
 #   - ssh
-tmux_conf_theme_hostname=enabled
+#tmux_conf_theme_hostname=enabled
 #tmux_conf_theme_hostname=disabled
-#tmux_conf_theme_hostname=ssh
+tmux_conf_theme_hostname=ssh
 
 # highlight focuse pane, possible values are:
 #   - enabled
@@ -202,7 +202,7 @@ bind-key v split-window -h
 ## 键 [\|] 和 [_-] 少敲一个shift键
 #bind-key \ split-window -h
 #bind-key - split-window -v
-#
+
 ## 窗口间切换
 ## [prefix-hjkl] pane之间移动
 #unbind-key h
@@ -222,7 +222,7 @@ bind-key v split-window -h
 ## [Ctrl-l] 左右两个切  [Ctrl-\] 最近的两个切换
 #bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim$' && tmux send-keys 'C-\\') || tmux select-pane -l"
 #bind C-l send-keys 'C-l'
-
+#
 # [prefix-q] 展示窗口数字并选择跳转
 bind-key q display-panes
 ## bind-key a last-pane # 绑什么好?
@@ -329,3 +329,6 @@ set -g mouse-resize-pane on
 ## -------------------------------- color end --------------------------------
 #
 ##--------------------------- base config end -------------------------------
+# guan
+run 'vim "+Tmuxline" "+qall"'
+
